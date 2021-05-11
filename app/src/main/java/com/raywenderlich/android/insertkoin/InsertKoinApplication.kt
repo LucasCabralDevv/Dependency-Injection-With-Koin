@@ -32,6 +32,9 @@
 package com.raywenderlich.android.insertkoin
 
 import android.app.Application
+import com.raywenderlich.android.insertkoin.di.mainModule
+import com.raywenderlich.android.insertkoin.di.remoteModule
+import org.koin.android.ext.android.startKoin
 
 
 class InsertKoinApplication : Application() {
@@ -39,6 +42,6 @@ class InsertKoinApplication : Application() {
   override fun onCreate() {
     super.onCreate()
 
-    // TODO: start Koin
+    startKoin(this, listOf(mainModule, remoteModule))
   }
 }
